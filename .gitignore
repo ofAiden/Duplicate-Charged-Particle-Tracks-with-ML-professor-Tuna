@@ -2,3 +2,6 @@ track.root
 data_file.root
 track.root
 data_file.root
+*.pkl
+*.npz
+*.pt
