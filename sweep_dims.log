@@ -1,0 +1,25 @@
+device cpu  pairs T5 400,000  pLS 400,000  epochs 25
+
+=== (A) EMBEDDING-DIMENSION SWEEP ===
+Claim under test: RankMe saturates while nominal dimension grows.
+
+  [d=4] euclidean    d=4   AUC 0.9551/0.9421  RankMe  3.47/4 (pLS  3.18)  var@3  96.1%  active 0.29  [87s]
+  [d=4] cosine       d=4   AUC 0.9477/0.9319  RankMe  3.93/4 (pLS  3.73)  var@3  84.8%  active 0.28  [86s]
+  [d=6] euclidean    d=6   AUC 0.9553/0.9414  RankMe  3.59/6 (pLS  3.14)  var@3  97.8%  active 0.29  [89s]
+  [d=6] cosine       d=6   AUC 0.9494/0.9377  RankMe  5.87/6 (pLS  5.57)  var@3  67.8%  active 0.27  [85s]
+  [d=8] euclidean    d=8   AUC 0.9551/0.9377  RankMe  4.08/8 (pLS  3.59)  var@3  97.1%  active 0.29  [88s]
+  [d=8] cosine       d=8   AUC 0.9507/0.9380  RankMe  7.61/8 (pLS  7.13)  var@3  64.6%  active 0.28  [85s]
+  [d=12] euclidean    d=12  AUC 0.9558/0.9350  RankMe  4.05/12 (pLS  3.46)  var@3  98.0%  active 0.29  [88s]
+  [d=12] cosine       d=12  AUC 0.9498/0.9375  RankMe 10.81/12 (pLS  9.63)  var@3  58.4%  active 0.29  [85s]
+  [d=16] euclidean    d=16  AUC 0.9553/0.9407  RankMe  4.28/16 (pLS  3.73)  var@3  97.8%  active 0.29  [89s]
+  [d=16] cosine       d=16  AUC 0.9498/0.9436  RankMe 13.58/16 (pLS 11.11)  var@3  53.6%  active 0.32  [87s]
+  [d=32] euclidean    d=32  AUC 0.9554/0.9431  RankMe  4.44/32 (pLS  3.80)  var@3  98.3%  active 0.29  [96s]
+  [d=32] cosine       d=32  AUC 0.9495/0.9422  RankMe 20.78/32 (pLS 13.84)  var@3  45.9%  active 0.41  [95s]
+
+wrote sweep_dims.json
+
+=== VERDICT ON THE SATURATION CLAIM ===
+  euclidean  d=4:3.47  d=6:3.59  d=8:4.08  d=12:4.05  d=16:4.28  d=32:4.44
+    nominal dim x8  ->  RankMe x1.28   (SATURATES)
+  cosine     d=4:3.93  d=6:5.87  d=8:7.61  d=12:10.81  d=16:13.58  d=32:20.78
+    nominal dim x8  ->  RankMe x5.28   (TRACKS DIMENSION)

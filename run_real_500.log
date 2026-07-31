@@ -1,0 +1,54 @@
+opening data_file.root
+  500 events in file, reading 500
+  loaded in 83.9s
+  z_max 267.235  r_max 110.110  eta_max 2.5
+
+building T5 features ...
+    T5 event 50/500  kept 360,258
+    T5 event 100/500  kept 723,383
+    T5 event 150/500  kept 1,095,703
+    T5 event 200/500  kept 1,453,767
+    T5 event 250/500  kept 1,828,080
+    T5 event 300/500  kept 2,177,190
+    T5 event 350/500  kept 2,539,321
+    T5 event 400/500  kept 2,908,481
+    T5 event 450/500  kept 3,272,928
+    T5 event 500/500  kept 3,630,781
+  T5: kept 3,630,781/3,630,781 (100.0%)
+
+building pLS features ...
+    pLS event 50/500  kept 369,845
+    pLS event 100/500  kept 744,938
+    pLS event 150/500  kept 1,126,060
+    pLS event 200/500  kept 1,491,298
+    pLS event 250/500  kept 1,867,552
+    pLS event 300/500  kept 2,240,044
+    pLS event 350/500  kept 2,608,868
+    pLS event 400/500  kept 2,982,347
+    pLS event 450/500  kept 3,356,807
+    pLS event 500/500  kept 3,724,446
+  pLS: kept 3,724,446/11,314,631 (32.9%)
+
+t5_pMatched over 3,630,781 candidates:
+  min 0.0000  median 1.0000  max 1.0000  std 0.1154
+  unique values: 11
+
+generating T5-T5 pairs ...
+
+[T5-T5] 1,000,000 pairs in 528.7s (50.0% duplicates)
+  BLOCKING RECALL CEILING: 0.9952
+    28,994,422 of 29,132,826 true duplicate pairs fall inside dR^2 < 0.02.
+    No model can recover the rest. Report this alongside any recall
+    number -- it is the ceiling every downstream metric sits under.
+
+generating pLS-T5 pairs ...
+
+[pLS-T5] 1,000,000 pairs in 896.5s (50.0% duplicates)
+  BLOCKING RECALL CEILING: 0.9634
+    6,067,117 of 6,297,847 true duplicate pairs fall inside dR^2 < 0.02.
+    No model can recover the rest. Report this alongside any recall
+    number -- it is the ceiling every downstream metric sits under.
+  NOTE: 1,000,000 quality entries are NaN (no pLS counterpart to t5_pMatched yet).
+    Arbitration on these pairs must be skipped until a target is chosen.
+
+wrote pairs.npz

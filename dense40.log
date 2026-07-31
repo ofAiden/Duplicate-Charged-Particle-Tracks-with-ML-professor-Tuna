@@ -1,0 +1,34 @@
+opening data_file.root
+  500 events in file, reading 40
+  loaded in 8.6s
+  z_max 267.235  r_max 110.110  eta_max 2.5
+
+building T5 features ...
+  T5: kept 289,659/289,659 (100.0%)
+
+building pLS features ...
+  pLS: kept 295,503/893,118 (33.1%)
+
+t5_pMatched over 289,659 candidates:
+  min 0.0000  median 1.0000  max 1.0000  std 0.1141
+  unique values: 10
+
+generating T5-T5 pairs ...
+
+[T5-T5] 5,459,530 pairs in 69.0s (42.1% duplicates)
+  BLOCKING RECALL CEILING: 0.9940
+    2,296,348 of 2,310,249 true duplicate pairs fall inside dR^2 < 0.02.
+    No model can recover the rest. Report this alongside any recall
+    number -- it is the ceiling every downstream metric sits under.
+
+generating pLS-T5 pairs ...
+
+[pLS-T5] 2,065,614 pairs in 125.9s (23.4% duplicates)
+  BLOCKING RECALL CEILING: 0.9631
+    482,952 of 501,448 true duplicate pairs fall inside dR^2 < 0.02.
+    No model can recover the rest. Report this alongside any recall
+    number -- it is the ceiling every downstream metric sits under.
+  NOTE: 2,065,614 quality entries are NaN (no pLS counterpart to t5_pMatched yet).
+    Arbitration on these pairs must be skipped until a target is chosen.
+
+wrote pairs_dense.npz

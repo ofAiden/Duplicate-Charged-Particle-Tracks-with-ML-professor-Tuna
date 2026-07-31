@@ -1,0 +1,73 @@
+blocking recall ceiling: T5-T5 0.9952  pLS-T5 0.9634
+device=cpu  emb_dim=12  epochs=50
+train batches: T5 781  pLS 781
+
+======================================================================
+EUCLIDEAN
+======================================================================
+margin=3.464
+  ep   1  loss=4.2885  t5=2.1569  pls=2.1249  reg=0.0067  active=0.56  RankMe=10.37/12  var@3=66.0%
+  ep   5  loss=2.7827  t5=1.4129  pls=1.3689  reg=0.0010  active=0.32  RankMe=4.97/12  var@3=97.9%
+  ep  10  loss=2.5840  t5=1.3071  pls=1.2754  reg=0.0015  active=0.29  RankMe=4.23/12  var@3=98.6%
+  ep  15  loss=2.5000  t5=1.2654  pls=1.2329  reg=0.0017  active=0.28  RankMe=3.94/12  var@3=98.6%
+  ep  20  loss=2.4440  t5=1.2392  pls=1.2029  reg=0.0019  active=0.28  RankMe=3.74/12  var@3=98.6%
+  ep  25  loss=2.3986  t5=1.2254  pls=1.1709  reg=0.0023  active=0.28  RankMe=3.65/12  var@3=98.6%
+  ep  30  loss=2.3464  t5=1.2162  pls=1.1273  reg=0.0028  active=0.28  RankMe=3.61/12  var@3=98.7%
+  ep  35  loss=2.2750  t5=1.2115  pls=1.0600  reg=0.0035  active=0.28  RankMe=3.62/12  var@3=98.4%
+  ep  40  loss=2.2224  t5=1.2056  pls=1.0130  reg=0.0039  active=0.29  RankMe=3.76/12  var@3=98.3%
+  ep  45  loss=2.1890  t5=1.2014  pls=0.9831  reg=0.0045  active=0.29  RankMe=3.89/12  var@3=98.2%
+  ep  50  loss=2.1663  t5=1.1932  pls=0.9685  reg=0.0046  active=0.29  RankMe=3.96/12  var@3=98.2%
+
+  AUC (balanced)  T5-T5 0.9566   pLS-T5 0.9004
+  @5% prior, 99% track efficiency: duplicate recall 0.189
+  conformal alpha=0.005: thr=0.0544  holdout false-removal=0.0054  dup recall=0.072
+
+======================================================================
+MAHALANOBIS
+======================================================================
+margin=3.464
+  ep   1  loss=4.4646  t5=2.2227  pls=2.2358  reg=0.0062  active=0.56  RankMe=10.12/12  var@3=68.6%
+  ep   5  loss=3.0571  t5=1.5418  pls=1.5029  reg=0.0125  active=0.36  RankMe=7.89/12  var@3=86.9%
+  ep  10  loss=2.6171  t5=1.3155  pls=1.3010  reg=0.0006  active=0.28  RankMe=7.39/12  var@3=88.8%  V_scalar=32.3%  eig<ridge=0/12
+  ep  15  loss=2.8507  t5=1.4164  pls=1.4170  reg=0.0173  active=0.32  RankMe=8.30/12  var@3=84.3%
+  ep  20  loss=2.5038  t5=1.2546  pls=1.2482  reg=0.0010  active=0.26  RankMe=7.12/12  var@3=90.6%  V_scalar=36.1%  eig<ridge=0/12
+  ep  25  loss=2.7629  t5=1.3459  pls=1.3837  reg=0.0332  active=0.30  RankMe=8.77/12  var@3=78.9%
+  ep  30  loss=2.4664  t5=1.2388  pls=1.2258  reg=0.0018  active=0.27  RankMe=7.77/12  var@3=84.9%  V_scalar=40.0%  eig<ridge=0/12
+  ep  35  loss=2.7204  t5=1.3706  pls=1.3283  reg=0.0215  active=0.31  RankMe=8.43/12  var@3=81.2%
+  ep  40  loss=2.4333  t5=1.2155  pls=1.2171  reg=0.0008  active=0.26  RankMe=7.72/12  var@3=87.7%  V_scalar=36.1%  eig<ridge=0/12
+  ep  45  loss=2.6641  t5=1.3148  pls=1.3259  reg=0.0233  active=0.30  RankMe=8.66/12  var@3=81.4%
+  ep  50  loss=2.4200  t5=1.2101  pls=1.2082  reg=0.0017  active=0.26  RankMe=7.47/12  var@3=87.3%  V_scalar=41.8%  eig<ridge=0/12
+
+  AUC (balanced)  T5-T5 0.9297   pLS-T5 0.7046
+  @5% prior, 99% track efficiency: duplicate recall 0.185
+  conformal alpha=0.005: thr=0.0234  holdout false-removal=0.0051  dup recall=0.066
+
+======================================================================
+COSINE
+======================================================================
+margin=3.464
+  ep   1  loss=4.8160  t5=2.5382  pls=2.2778  reg=0.0000  active=0.50  RankMe=10.92/12  var@3=58.8%
+  ep   5  loss=2.8479  t5=1.5310  pls=1.3169  reg=0.0000  active=0.32  RankMe=10.62/12  var@3=62.3%
+  ep  10  loss=2.6169  t5=1.3910  pls=1.2259  reg=0.0000  active=0.29  RankMe=10.64/12  var@3=62.3%
+  ep  15  loss=2.5040  t5=1.3235  pls=1.1805  reg=0.0000  active=0.28  RankMe=10.86/12  var@3=58.3%
+  ep  20  loss=2.4353  t5=1.2860  pls=1.1493  reg=0.0000  active=0.27  RankMe=10.94/12  var@3=57.6%
+  ep  25  loss=2.3812  t5=1.2569  pls=1.1242  reg=0.0000  active=0.26  RankMe=10.98/12  var@3=56.2%
+  ep  30  loss=2.3397  t5=1.2323  pls=1.1074  reg=0.0000  active=0.26  RankMe=11.01/12  var@3=56.2%
+  ep  35  loss=2.3096  t5=1.2199  pls=1.0896  reg=0.0000  active=0.26  RankMe=11.03/12  var@3=55.7%
+  ep  40  loss=2.2835  t5=1.2027  pls=1.0809  reg=0.0000  active=0.25  RankMe=11.01/12  var@3=56.3%
+  ep  45  loss=2.2667  t5=1.1956  pls=1.0711  reg=0.0000  active=0.25  RankMe=11.01/12  var@3=55.9%
+  ep  50  loss=2.2461  t5=1.1848  pls=1.0613  reg=0.0000  active=0.25  RankMe=11.05/12  var@3=56.1%
+
+  AUC (balanced)  T5-T5 0.9566   pLS-T5 0.9493
+  @5% prior, 99% track efficiency: duplicate recall 0.189
+  conformal alpha=0.005: thr=0.0034  holdout false-removal=0.0050  dup recall=0.059
+
+======================================================================
+SUMMARY (all three trained independently on their own objective)
+======================================================================
+metric            AUC T5   AUC pLS    RankMe    var@3
+euclidean         0.9566    0.9004      3.96    98.2%
+mahalanobis       0.9297    0.7046      7.47    87.3%
+cosine            0.9566    0.9493     11.05    56.1%
+
+wrote results/results.json

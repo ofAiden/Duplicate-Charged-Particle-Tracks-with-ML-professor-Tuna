@@ -1,0 +1,22 @@
+{
+  "emb_dim": 12,
+  "hidden": 128,
+  "batch_size": 1024,
+  "epochs": 25,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "clip_norm": 5.0,
+  "margin": null,
+  "target_std": 0.5,
+  "vicreg_weight": 1.0,
+  "cosine_temperature": 0.15,
+  "cov_update_interval": 2,
+  "max_cov_samples": 50000,
+  "ridge_rel": 0.001,
+  "seed": 42,
+  "metrics": [
+    "euclidean",
+    "mahalanobis",
+    "cosine"
+  ]
+}

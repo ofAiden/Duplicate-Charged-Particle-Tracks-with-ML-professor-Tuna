@@ -1,0 +1,50 @@
+======================================================================
+ARBITRATION: which duplicate survives
+======================================================================
+  duplicate pairs                 : 500,000
+  with finite quality on both     : 500,000
+  decisive (|dq| > 0.001)          : 230,209
+  ties, excluded from training    : 269,791 (54.0% of usable pairs)
+
+  train 184,167  test 46,042  device cpu
+  mean ||e_i - e_j|| over duplicates : 0.5075
+  embedding scale (||std||)          : 4.5152
+  ratio                              : 0.1124   (-> 0 means the embedding has erased the difference)
+
+  --- input: embedding ---
+    [embedding] ep   1  loss=0.6704
+    [embedding] ep  10  loss=0.5587
+    [embedding] ep  20  loss=0.5489
+    [embedding] ep  30  loss=0.5447
+    [embedding] ep  40  loss=0.5432
+
+  --- input: raw ---
+    [raw      ] ep   1  loss=0.5988
+    [raw      ] ep  10  loss=0.4572
+    [raw      ] ep  20  loss=0.4491
+    [raw      ] ep  30  loss=0.4456
+    [raw      ] ep  40  loss=0.4445
+
+  --- input: both ---
+    [both     ] ep   1  loss=0.6010
+    [both     ] ep  10  loss=0.4556
+    [both     ] ep  20  loss=0.4457
+    [both     ] ep  30  loss=0.4403
+    [both     ] ep  40  loss=0.4387
+
+----------------------------------------------------------------------
+  input         accuracy  decisive      AUC   antisym
+  embedding       0.6456    0.7619   0.7291   0.0e+00
+  raw             0.7032    0.8549   0.8071   0.0e+00
+  both            0.7032    0.8498   0.8073   0.0e+00
+  random          0.5000    0.5000   0.5000
+  priority rule    0.5000    0.5000   0.5000   (no signal for same-collection pairs)
+----------------------------------------------------------------------
+
+  raw features add +0.0576 accuracy over the embedding alone.
+  -> The embedding HAS discarded arbitration-relevant information,
+     exactly as the contrastive objective is designed to. The
+     arbiter must read raw features; an embedding-only head
+     under-performs by construction.
+
+wrote results/arbiter.pt (best input: raw) and results/arbiter_results.json

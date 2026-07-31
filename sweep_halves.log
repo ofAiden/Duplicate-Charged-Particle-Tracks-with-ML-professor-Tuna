@@ -1,0 +1,12 @@
+device cpu  pairs T5 400,000  pLS 400,000  epochs 25
+
+=== (B) DISJOINT-HALF REPLICATION ===
+Not a second sample: same events, disjoint halves. Detects subset
+and seed instability only, NOT a bias shared by the whole sample.
+
+  [half0] euclidean    d=12  AUC 0.9508/0.9418  RankMe  4.87/12 (pLS  4.11)  var@3  96.7%  active 0.31  [51s]
+  [half0] cosine       d=12  AUC 0.9447/0.9361  RankMe 10.26/12 (pLS  8.79)  var@3  63.4%  active 0.31  [50s]
+  [half1] euclidean    d=12  AUC 0.9533/0.9408  RankMe  4.82/12 (pLS  4.28)  var@3  96.9%  active 0.31  [51s]
+  [half1] cosine       d=12  AUC 0.9473/0.9367  RankMe 10.49/12 (pLS  8.92)  var@3  59.9%  active 0.32  [51s]
+
+wrote sweep_halves.json

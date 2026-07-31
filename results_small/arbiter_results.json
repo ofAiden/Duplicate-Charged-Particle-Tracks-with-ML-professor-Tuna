@@ -1,0 +1,28 @@
+{
+  "n_train": 8897,
+  "n_test": 2225,
+  "by_input": {
+    "embedding": {
+      "accuracy": 0.6364045143127441,
+      "accuracy_decisive_half": 0.7145833333333333,
+      "ranking_auc": 0.7054973291014357,
+      "antisymmetry_error": 0.0
+    },
+    "raw": {
+      "accuracy": 0.7011235952377319,
+      "accuracy_decisive_half": 0.8677083333333333,
+      "ranking_auc": 0.8092713120180699,
+      "antisymmetry_error": 0.0
+    },
+    "both": {
+      "accuracy": 0.702471911907196,
+      "accuracy_decisive_half": 0.8729166666666667,
+      "ranking_auc": 0.8094481819715971,
+      "antisymmetry_error": 0.0
+    }
+  },
+  "best_input": "both",
+  "encoder": "results_small/euclidean.pt",
+  "pairs": "pairs_small.npz",
+  "dup_separation_ratio": 0.1579592376947403
+}
